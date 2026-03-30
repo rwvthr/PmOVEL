@@ -39,3 +39,43 @@ function digitar() {
     s = n1 + n2 
     alert(s)
 }
+
+function digitar2() {
+    let n1 = Number(prompt('Digite um número: '))
+    let n2 = Number(prompt('Digite outro número: '))
+    alert(`O somatório é: ${soma5(n1, n2)}`)
+}
+
+function comparardeclaracoes() {
+    //usando var
+    var linguagem = "JavaScript";
+    var linguagem = "Python"; //ok, pode declarar
+    console.log('var:', linguagem); //Python
+
+    //usando let
+    let ano = 2024;
+    //let ano = 2025; // Erro! Não pode redeclarar com let no mesmo escopo
+    ano = 2025; // ok, pode reatribuir
+    console.log('let:', ano); //2025
+
+    //usando const
+    const planeta = 'Terra'
+    //planeta = 'Marte'; //Erro! Não pode reatribuir
+    console.log('const:', planeta); //terra
+
+    if (true) {
+        var linguagem = "C++"; //mesmo escopo da função
+        let ano = 2030; // novo escopo (dentro do bloco)
+        const planeta = 'Marte'; // novo escopo (dentro do bloco)
+        console.log('Dentro do bloco:');
+        console.log('var:', linguagem)  //C++
+        console.log('let:', ano) // 2030
+        console.log('const:', planeta) //Marte
+    }
+
+    console.log('Fora do bloco: ');
+    console.log('var:', linguagem); // C++ (alterado dentro do bloco)
+    console.log('let:', ano); // 2025 (a versão dentro do bloco não afeta essa)
+    console.log('const:', planeta); // terra (item)
+    
+}
